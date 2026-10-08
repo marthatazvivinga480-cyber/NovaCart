@@ -1,0 +1,70 @@
+.subnav nav a {
+  font-size: 12px;
+  color: #fff2ed;
+  padding: 12px 0;
+  white-space: nowrap;
+}
+.subnav nav a:hover {
+  color: var(--accent);
+}
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  padding: 30px;
+  margin-bottom: 36px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdfa;
+}
+.contact-section h2 {
+  font-size: 26px;
+  letter-spacing: -0.7px;
+}
+.contact-section p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.contact-section label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+.contact-section input,
+.contact-section textarea {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px;
+  background: white;
+  width: 100%;
+}
+.contact-section textarea {
+  resize: vertical;
+}
+.contact-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+@media (max-width: 760px) {
+  .all-menu {
+    font-size: 11px !important;
+  }
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 22px;
+  }
+  .store-footer nav {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 400px) {
+  .contact-fields {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

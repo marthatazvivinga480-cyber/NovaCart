@@ -1,0 +1,29 @@
+{
+  "name": "novacart",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5006",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test src/lib/commerce.test.ts src/lib/admin.test.ts"
+  },
+  "dependencies": {
+    "firebase": "^12.7.0",
+    "lucide-react": "^1.52.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.4"
+  },
+  "overrides": {
+    "@grpc/grpc-js": "^1.13.6"
+  }
+}

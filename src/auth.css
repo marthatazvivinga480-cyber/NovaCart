@@ -1,0 +1,85 @@
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 5px;
+  margin-bottom: 20px;
+  background: #f7ebe5;
+  border-radius: 7px;
+}
+.auth-tabs button {
+  flex: 1;
+  padding: 11px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 12px;
+}
+.auth-tabs button[aria-pressed="true"] {
+  background: #492842;
+  color: #fffaf5;
+}
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+.password-field {
+  position: relative;
+}
+.modal .password-field input {
+  padding-right: 45px;
+}
+.password-field button {
+  position: absolute;
+  right: 6px;
+  top: 4px;
+  bottom: 4px;
+  width: 35px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  color: #694052;
+}
+.auth-error {
+  background: #fff0ef;
+  color: #a02e3e;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.auth-notice {
+  background: #f2f6ed;
+  color: #3c6137;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.auth-switch {
+  display: block;
+  margin: 18px auto 0;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  color: #8b3d59;
+  text-decoration: underline;
+}
+.auth-email {
+  overflow-wrap: anywhere;
+}
+.auth-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+@media (max-width: 480px) {
+  .header-actions .account-button {
+    display: flex;
+  }
+  .header-actions .account-button strong {
+    font-size: 9px;
+  }
+}

@@ -1,0 +1,79 @@
+.product {
+  position: relative;
+}
+.heart-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #ebddd6;
+  border-radius: 50%;
+  background: white;
+  color: #937583;
+}
+.heart-button.is-saved {
+  color: #e33452;
+  border-color: #f7bbc6;
+}
+.heart-button.is-saved svg,
+.wishlist-header.has-saved svg {
+  fill: #e33452;
+  stroke: #e33452;
+}
+.header-actions .wishlist-header {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 8px 5px;
+}
+.wishlist-header span {
+  font-size: 11px;
+}
+.wishlist-list {
+  max-height: 55dvh;
+  overflow-y: auto;
+}
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.wishlist-item img {
+  width: 65px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.wishlist-item > div {
+  flex: 1;
+}
+.wishlist-item b {
+  font-size: 12px;
+}
+.wishlist-item small {
+  display: block;
+  margin: 7px 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+.wishlist-item .heart-button {
+  position: static;
+  flex-shrink: 0;
+}
+.product .tag {
+  max-width: calc(100% - 60px);
+}
+@media (max-width: 480px) {
+  .header-actions {
+    gap: 5px;
+  }
+  .header-actions .account-button {
+    display: none;
+  }
+}

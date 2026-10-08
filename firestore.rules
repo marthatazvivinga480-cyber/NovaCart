@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == 'Qp14hMAgWZhaupXlBDoHh9H';
+    }
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    function validProduct(id) {
+      let p = request.resource.data;
+      return p.keys().hasAll(['id', 'name', 'description', 'category', 'price', 'image', 'tag', 'createdAt'])
+        && p.keys().hasOnly(['id', 'name', 'description', 'category', 'price', 'image', 'tag', 'createdAt', 'rating'])
+        && p.id == id
+        && p.name is string && p.name.size() > 0 && p.name.size() <= 80
+        && p.description is string && p.description.size() > 0 && p.description.size() <= 500
+        && p.category in ["Jewellery", "Ladies’ Wear", "Kids’ Wear", "Sneakers", "Denim Jeans", "Phones"]
+        && p.price is number && p.price > 0 && p.price <= 10000000
+        && p.image is string && p.image.size() <= 300
+        && p.image.matches('/images/[a-zA-Z0-9_/-]+[.](jpg|jpeg|png|webp)')
+        && p.tag is string && p.tag.size() <= 40
+        && p.createdAt is number && p.createdAt > 0
+        && (!('rating' in p) || (p.rating is number && p.rating >= 0 && p.rating <= 5));
+    }
+    match /products/{id} {
+      allow read: if true;
+      allow create, update: if isAdmin() && validProduct(id);
+      allow delete: if isAdmin();
+    }
+    match /store/catalogue {
+      allow read: if true;
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly(['initialized', 'initializedAt'])
+        && request.resource.data.initialized == true
+        && request.resource.data.initializedAt is number;
+    }
+    match /users/{uid}/cart/{id} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['quantity'])
+        && request.resource.data.quantity is int
+        && request.resource.data.quantity > 0;
+    }
+    match /users/{uid}/wishlist/{id} {
+      allow read, delete: if isOwner(uid);
+      allow create, update: if isOwner(uid)
+        && request.resource.data.keys().hasOnly(['saved'])
+        && request.resource.data.saved == true;
+    }
+    // Unmatched paths, including roles and real orders, remain inaccessible.
+  }
+}

@@ -1,0 +1,30 @@
+.product-rating {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 9px;
+}
+.rating-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+.rating-star {
+  display: inline-flex;
+  position: relative;
+  color: #c9beb9;
+}
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: inline-flex;
+  color: #a86415;
+}
+.star-fill svg {
+  flex-shrink: 0;
+  fill: #d99739;
+}

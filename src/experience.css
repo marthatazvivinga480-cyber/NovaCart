@@ -1,0 +1,137 @@
+.brand-logo {
+  width: 166px;
+  height: auto;
+  display: block;
+}
+.store-footer .brand-logo {
+  background: #fffaf5;
+  border-radius: 5px;
+  padding: 5px;
+  width: 160px;
+}
+.hero-orbits {
+  position: absolute;
+  right: 11%;
+  top: 55px;
+  width: 170px;
+  height: 170px;
+  pointer-events: none;
+}
+.hero-orbits i {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #fff5eeac;
+  border-radius: 50%;
+  animation: nova-orbit 20s linear infinite;
+}
+.hero-orbits i::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #f3b2a0;
+  border-radius: 50%;
+  left: 18px;
+  top: 18px;
+  box-shadow: 0 0 0 8px #fff4ed35;
+}
+.hero-orbits i:nth-child(2) {
+  inset: 25px;
+  animation-direction: reverse;
+  animation-duration: 16s;
+  border-style: dashed;
+}
+.hero-orbits i:nth-child(3) {
+  inset: 55px;
+  animation-duration: 12s;
+}
+@keyframes nova-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.demo-banner {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px;
+  background: #f8e4db;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.checkout-lines {
+  margin-top: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.checkout-lines p {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.checkout-lines b {
+  white-space: nowrap;
+}
+.payment-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+.payment-preview svg {
+  flex-shrink: 0;
+}
+.payment-preview b {
+  font-size: 13px;
+}
+.payment-preview p {
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.checkout-success {
+  text-align: center;
+  padding: 25px 0;
+}
+.checkout-success > svg {
+  color: #885069;
+}
+.order-record {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 16px;
+  margin: 15px 0;
+}
+.order-record small {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.order-record p {
+  font-size: 12px;
+}
+@media (max-width: 760px) {
+  .hero-orbits {
+    right: 7%;
+    top: 90px;
+    opacity: 0.4;
+    width: 105px;
+    height: 105px;
+  }
+  .hero-orbits i:nth-child(3) {
+    inset: 40px;
+  }
+  .brand-logo {
+    width: 135px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-orbits i {
+    animation: none;
+  }
+}

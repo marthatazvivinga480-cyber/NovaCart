@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="310" height="66" viewBox="0 0 310 66" role="img" aria-labelledby="title desc">
+<title id="title">NovaCart</title><desc id="desc">A plum shopping bag with a coral rising orbit, next to the NovaCart wordmark.</desc>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M10 24h35l4 31H6z" fill="#492842" stroke="#492842" stroke-width="3"/><path d="M17 25v-6a11 11 0 0 1 22 0v6" stroke="#492842" stroke-width="4"/><path d="M16 44V32l11 13V32" stroke="#fffaf5" stroke-width="3"/><path d="M34 35a6 6 0 1 0 0 9" stroke="#f3b2a0" stroke-width="3"/><path d="M3 49C-1 58 22 64 44 41c8-8 11-18 8-23" stroke="#b45b72" stroke-width="3"/><path d="m46 19 6-4 5 7" stroke="#b45b72" stroke-width="3"/></g>
+<text x="70" y="45" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="750" letter-spacing="-1.5" fill="#492842">Nova<tspan fill="#a6536c">Cart</tspan></text></svg>
