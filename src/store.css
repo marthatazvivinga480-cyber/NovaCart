@@ -13,7 +13,9 @@
   --width: 1360px;
   --gutter: clamp(16px, 3vw, 44px);
 }
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 body {
@@ -898,7 +900,7 @@ textarea:focus-visible {
   position: fixed;
   bottom: 24px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate3d(-50%, 0, 0);
   background: var(--primary);
   color: white;
   padding: 15px 22px;

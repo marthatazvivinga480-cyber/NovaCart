@@ -3,6 +3,7 @@
   padding-bottom: 48px;
 }
 .admin-page h1 {
+  font-weight: 600;
   font-size: clamp(30px, 4vw, 46px);
   line-height: 1.15;
   letter-spacing: -1px;
@@ -317,3 +318,4 @@
   line-height: 1.5;
   color: var(--muted);
 }
+
