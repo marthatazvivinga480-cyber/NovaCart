@@ -142,7 +142,7 @@ export default function Header({
         </div>
       </div>
       <div className="service-strip">
-        <span>Fashion, family & everyday tech</span>
+        <span>Style and essentials for your everyday</span>
         <span className="icon-label">
           <Icon kind="truck" size={14} /> Free delivery over R1,000
         </span>

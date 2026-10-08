@@ -11,25 +11,16 @@ export default function Contact() {
     >
       <div className="contact-intro">
         <span className="eyebrow">LET’S START A CONVERSATION</span>
-        <h1 id="contact-title">
-          Your next find.
-          <br />
-          Your questions, welcome.
-        </h1>
+        <h1 id="contact-title">Contact NovaCart</h1>
         <p>
-          Tell us what caught your eye or share an idea for NovaCart. We’re
-          building a place for fashion, family and everyday essentials.
+          Questions about the collection or feedback on NovaCart? Write your message below.
         </p>
       </div>
       <div className="contact-section" aria-labelledby="contact-heading">
         <div>
           <span className="eyebrow">GET IN TOUCH</span>
-          <h2 id="contact-heading">Write to NovaCart.</h2>
-          <p>Questions about the collection? Start a conversation here.</p>
-          <p className="demo-note">
-            Portfolio preview: this form previews your message. It does not send
-            it yet.
-          </p>
+          <h2 id="contact-heading">Your message</h2>
+          <p>Include the product name if your question is about a particular item.</p>
         </div>
         <form
           onChange={() => setPreview(false)}
@@ -70,7 +61,8 @@ export default function Contact() {
               maxLength={1500}
             />
           </label>
-          <button className="primary" type="submit">
+          <p className="contact-preview-note" id="contact-preview-note">Portfolio preview: your message will not be sent or saved.</p>
+          <button className="primary" type="submit" aria-describedby="contact-preview-note">
             Preview message <Icon kind="mail" size={17} />
           </button>
           {preview && (

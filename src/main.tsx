@@ -9,9 +9,11 @@ import "./navigation.css";
 import "./identity.css";
 import "./experience.css";
 
-createRoot(document.getElementById("root")!).render(<App />);
+
 
 import "./auth.css";
 import "./about.css";
 
 import "./admin.css";
+
+createRoot(document.getElementById("root")!).render(<App />);

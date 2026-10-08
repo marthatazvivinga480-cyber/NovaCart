@@ -135,3 +135,14 @@
     animation: none;
   }
 }
+
+/* Compact confirmation; the checkout summary retains its wider layout. */
+.modal:has(> .checkout-success) { width: 480px; padding: 30px 28px 24px; }
+.modal > .checkout-success { padding: 18px 0 0; }
+.modal .checkout-success h2 { font-size: 24px; font-weight: 600; line-height: 1.3; letter-spacing: -.5px; padding-right: 0; margin: 16px 0 12px; }
+.checkout-success > p { font-size: 14px; margin: 12px 0; }
+.checkout-success > .demo-note { font-size: 12px; line-height: 1.7; margin-bottom: 0; }
+@media (max-width: 480px) {
+  .modal:has(> .checkout-success) { padding: 28px 20px 22px; }
+  .modal .checkout-success h2 { font-size: 22px; }
+}

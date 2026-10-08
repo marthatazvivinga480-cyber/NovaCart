@@ -24,7 +24,7 @@ export default function Footer({
                 alt="NovaCart"
               />
             </a>
-            <p>Fashion, family & everyday tech.</p>
+            <p>Style and essentials for your everyday.</p>
           </div>
           <nav aria-label="Footer navigation">
             <a href="#collection">Products</a>

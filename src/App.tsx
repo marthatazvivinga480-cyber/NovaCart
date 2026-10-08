@@ -1,3 +1,4 @@
+import { initialProducts } from "./data/catalogue.ts";
 import AdminDashboard from "./components/AdminDashboard.tsx";
 import { useCatalogue } from "./lib/useCatalogue.ts";
 import { isAdminUser } from "./lib/admin-config.ts";
@@ -30,6 +31,18 @@ import {
   WISHLIST_STORAGE_KEY,
 } from "./lib/commerce.ts";
 import type { Cart, Category, ModalState, Panel, Product } from "./types.ts";
+function CartThumbnail({ product }: { product: Product }) {
+  const [source, setSource] = useState(product.image);
+  const [unavailable, setUnavailable] = useState(false);
+  const localPhoto = initialProducts.find(item => item.id === product.id)?.image;
+  useEffect(() => { setSource(product.image); setUnavailable(false); }, [product.image]);
+  if (unavailable) return <span className="cart-photo-fallback" role="img" aria-label={`${product.name}: photo unavailable`}><Icon kind="empty" size={22}/></span>;
+  return <img className="cart-photo" src={source} alt={product.name} onError={() => {
+    if (localPhoto && source !== localPhoto) setSource(localPhoto);
+    else setUnavailable(true);
+  }}/>;
+}
+
 export default function App() {
   const [pageHash, setPageHash] = useState(() => window.location.hash);
   useEffect(() => {
@@ -363,7 +376,7 @@ export default function App() {
                     <div className="cart-list">
                       {cartItems.map((p) => (
                         <div className="cart-item" key={p.id}>
-                          <img src={p.image} alt={p.name} />
+                          <CartThumbnail key={`${p.id}:${p.image}`} product={p} />
                           <div>
                             <b>{p.name}</b>
                             <small>{money(p.price)}</small>
