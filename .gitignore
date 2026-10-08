@@ -3,3 +3,6 @@ dist/
 .env
 .env.local
 *.log
+public/images/hero-boutique-warm.jpg
+public/istockphoto-148141634-1024x1024.jpg
+
