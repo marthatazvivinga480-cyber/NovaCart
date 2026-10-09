@@ -409,6 +409,7 @@ export default function AdminDashboard({
               </h2>
               <button
                 type="button"
+                className="admin-editor-close"
                 aria-label="Close product editor"
                 disabled={busy}
                 onClick={() => setEditing(null)}
@@ -549,6 +550,10 @@ export default function AdminDashboard({
                   )}
                 </div>
               </div>
+              <div className="admin-editor-actions">
+              <button type="button" className="admin-secondary" onClick={() => setEditing(null)}>
+                Cancel
+              </button>
               <button
                 type="submit"
                 className="primary"
@@ -564,6 +569,7 @@ export default function AdminDashboard({
                 )}
                 {operation === "save" ? "Saving product…" : "Save product"}
               </button>
+              </div>
             </fieldset>
           </form>
         </dialog>

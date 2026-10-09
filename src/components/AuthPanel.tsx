@@ -43,9 +43,11 @@ function messageFor(error: unknown): string {
 export default function AuthPanel({
   user,
   loading,
+  onOrders,
 }: {
   user: User | null;
   loading: boolean;
+  onOrders: () => void;
 }) {
   const [mode, setMode] = useState<Mode>("signin");
   const [busy, setBusy] = useState(false);
@@ -88,6 +90,12 @@ export default function AuthPanel({
       setBusy(false);
     }
   };
+  const ordersButton = (
+    <button type="button" className="auth-orders full" onClick={onOrders}>
+      <Icon kind="orders" size={18} /> My Orders
+      <Icon kind="arrow" size={18} />
+    </button>
+  );
   if (loading)
     return (
       <>
@@ -113,6 +121,7 @@ export default function AuthPanel({
             {error}
           </p>
         )}
+        {ordersButton}
         <button
           className="primary full"
           disabled={busy}
@@ -247,6 +256,9 @@ export default function AuthPanel({
       >
         {mode === "reset" ? "Back to sign in" : "Forgot password?"}
       </button>
+      {ordersButton}
     </>
   );
 }
+
+

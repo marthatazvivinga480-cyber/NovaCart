@@ -83,3 +83,23 @@
     font-size: 9px;
   }
 }
+
+.auth-orders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 44px;
+  margin: 16px 0;
+  padding: 12px 16px;
+  border: 1px solid #492842;
+  border-radius: 5px;
+  background: #fffaf5;
+  color: #492842;
+  font-weight: 600;
+}
+.auth-orders:hover { background: #f7ebe5; }
+.auth-orders:focus-visible {
+  outline: 2px solid #492842;
+  outline-offset: 3px;
+}

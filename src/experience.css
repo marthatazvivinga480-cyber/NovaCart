@@ -146,3 +146,22 @@
   .modal:has(> .checkout-success) { padding: 28px 20px 22px; }
   .modal .checkout-success h2 { font-size: 22px; }
 }
+
+
+/* Allow the mobile header's grid items to shrink within the viewport. */
+@media (max-width: 760px) {
+  .header-inner { grid-template-columns: minmax(0, 1fr) auto; }
+  .header-inner > *, .subnav-inner > nav { min-width: 0; }
+  .header-inner .brand-logo { max-width: 100%; }
+  .header-actions { gap: 8px; }
+  .header-search { width: 100%; }
+  .subnav-inner { gap: 16px; }
+  .subnav nav { gap: 16px; }
+  .hero-neutral { grid-template-columns: minmax(0, 1fr); }
+  .hero-neutral .hero-content { min-width: 0; }
+}
+@media (max-width: 480px) {
+  .header-inner .brand-logo { width: 110px; }
+  .header-actions { gap: 5px; }
+  .header-actions button { padding-inline: 3px; }
+}

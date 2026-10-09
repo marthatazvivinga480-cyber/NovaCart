@@ -1,8 +1,17 @@
 import Icon from "./Icon.tsx";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Contact() {
   const [preview, setPreview] = useState(false);
+  const confirmationRef = useRef<HTMLDivElement>(null);
+  const revealConfirmation = () => {
+    const confirmation = confirmationRef.current;
+    confirmation?.focus({ preventScroll: true });
+    confirmation?.scrollIntoView({ block: "nearest", behavior: "instant" });
+  };
+  useEffect(() => {
+    if (preview) revealConfirmation();
+  }, [preview]);
   return (
     <section
       className="contact-page page-width"
@@ -27,6 +36,7 @@ export default function Contact() {
           onSubmit={(event) => {
             event.preventDefault();
             setPreview(true);
+            if (preview) revealConfirmation();
           }}
         >
           <div className="contact-fields">
@@ -66,10 +76,10 @@ export default function Contact() {
             Preview message <Icon kind="mail" size={17} />
           </button>
           {preview && (
-            <p role="status" className="demo-note">
-              Your message is ready. Sending will be enabled when the contact
-              service is connected; nothing has been sent.
-            </p>
+            <div ref={confirmationRef} role="status" tabIndex={-1} className="contact-confirmation">
+              <strong>Your message is ready.</strong>
+              <p>This is a portfolio preview. Your message has not been sent or saved.</p>
+            </div>
           )}
         </form>
       </div>

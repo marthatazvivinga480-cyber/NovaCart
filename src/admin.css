@@ -4,9 +4,9 @@
 }
 .admin-page h1 {
   font-weight: 600;
-  font-size: clamp(30px, 4vw, 46px);
-  line-height: 1.15;
-  letter-spacing: -1px;
+  font-size: clamp(32px, 3.3vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.6px;
   margin: 14px 0;
 }
 .admin-page p {
@@ -319,3 +319,26 @@
   color: var(--muted);
 }
 
+.admin-editor-heading { flex-wrap: nowrap; align-items: flex-start; }
+.admin-editor-heading h2 { min-width: 0; font-weight: 600; }
+.admin-editor-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: #f7eee9; color: #492842;
+}
+.admin-editor-close:focus-visible { outline: 2px solid #492842; outline-offset: 3px; }
+.admin-editor-actions {
+  position: sticky; bottom: -24px; display: flex; flex-wrap: wrap;
+  justify-content: flex-end; gap: 12px; padding: 16px 0;
+  background: #fffdfa; border-top: 1px solid var(--line); margin-top: 16px;
+}
+.admin-editor-actions button, .admin-product-actions button { min-height: 44px; }
+.admin-feedback button { border: 0; border-radius: 50%; background: transparent; }
+.admin-price-control button { border: 0; min-width: 40px; min-height: 44px; }
+@media (max-width: 760px) {
+  .admin-editor-actions { bottom: -20px; }
+  .admin-editor-dialog .admin-editor-heading h2 { font-size: 20px; }
+  .admin-editor input, .admin-editor select, .admin-editor textarea { font-size: 16px; }
+  .admin-editor-grid, .admin-form-row { min-width: 0; }
+  .admin-form-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+}

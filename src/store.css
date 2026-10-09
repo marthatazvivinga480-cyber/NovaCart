@@ -320,8 +320,8 @@ textarea:focus-visible {
 .hero h1 {
   font-size: clamp(36px, 4vw, 58px);
   line-height: 1.08;
-  font-weight: 800;
-  letter-spacing: -2px;
+  font-weight: 600;
+  letter-spacing: -1px;
   margin: 18px 0;
 }
 .hero p {
@@ -1455,3 +1455,39 @@ textarea:focus-visible {
 
 .contact-page .contact-section h2, .contact-help h2 { font-weight: 600; }
 .contact-page .contact-preview-note { font-size: 12px; line-height: 1.6; color: var(--muted); margin: 0 0 12px; }
+
+/* Mobile review: readable footer and explicit room for the hero photograph. */
+.store-footer p { font-size: 12px; color: #fff1e9; }
+.store-footer nav { font-size: 12px; flex-wrap: wrap; }
+.contact-confirmation {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #cbd8c5;
+  border-radius: 8px;
+  background: #f2f6ed;
+  color: #304a2e;
+  scroll-margin-block: 210px 24px;
+}
+.contact-confirmation:focus { outline: 2px solid #52704b; outline-offset: 3px; }
+.contact-page .contact-confirmation p { margin: 8px 0 0; color: inherit; line-height: 1.6; }
+@media (min-width: 761px) and (max-width: 1000px) {
+  .header-inner { grid-template-columns: 1fr auto; gap: 14px; }
+  .header-search { grid-column: 1 / -1; grid-row: 2; }
+  html { scroll-padding-top: 210px; }
+}
+@media (max-width: 760px) {
+  .hero.hero-neutral { display: grid; min-height: 0; }
+  .hero-neutral .hero-content { grid-row: 1; padding-top: 32px; padding-bottom: 28px; }
+  .hero-neutral h1 { font-size: clamp(32px, 8.5vw, 40px); line-height: 1.15; }
+  .hero-neutral .hero-background {
+    position: relative; inset: auto; left: auto; width: 100%; height: 220px;
+    grid-row: 2; object-position: center 55%;
+  }
+  .hero-neutral .hero-shade, .hero-neutral .hero-orbits { display: none; }
+  .product-meta { min-height: 0; margin-bottom: 8px; }
+  .product-rating { margin-bottom: 8px; }
+  .product-bottom { padding-top: 10px; gap: 8px; }
+  .add-button { min-height: 44px; }
+  .contact-page input, .contact-page textarea { font-size: 16px; }
+  .contact-page input, .contact-page button.primary { min-height: 44px; }
+}

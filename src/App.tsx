@@ -449,7 +449,7 @@ export default function App() {
                 )}
               </>
             ) : modal === "account" ? (
-              <AuthPanel user={user} loading={authLoading} />
+              <AuthPanel user={user} loading={authLoading} onOrders={() => openPanel("orders")} />
             ) : modal === "studio" ? (
               <>
                 <h2 id="modal-title">Product management</h2>
@@ -482,3 +482,4 @@ export default function App() {
     </>
   );
 }
+
